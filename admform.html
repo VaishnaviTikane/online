@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('campus.jpg');
+      background-size: cover;
+      background-position: center;
+      font-family: 'Arial', sans-serif;
+      color: rgba(17, 19, 19, 0.929);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      position: relative;
+    }
+
+    .container {
+      background: rgba(217, 195, 195, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px; /* Adjust the width as needed */
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-bottom: 8px;
+    }
+
+    input {
+      padding: 8px;
+      margin-bottom: 16px;
+      border: none;
+      border-radius: 4px;
+    }
+
+    p {
+      text-align: center;
+      font-style: italic;
+      margin-top: 10px;
+    }
+
+    .watermark {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2em;
+      font-weight: bold;
+      color: rgba(252, 247, 247, 0.982);
+      transform: rotate(-45deg);
+      user-select: none;
+      pointer-events: none;
+    }
+  </style>
+  <title>FILL THESE DETAILS</title>
+</head>
+<body>
+  
+  <div class="container">
+    <h1>PERSONAL DETAILS</h1>
+    <form action="process_admission.php" method="post">
+      <!-- Student Information -->
+      <label for="studentName">Student Name:</label>
+      <input type="text" id="studentName" name="studentName" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phoneNumber">Phone Number:</label>
+      <input type="tel" id="phoneNumber" name="phoneNumber" required>
+
+      <!-- Parent Information -->
+      <label for="parentName">parent's Name:</label>
+      <input type="text" id="parentName" name="parentName" required>
+
+      <label for="parentPhoneNumber">Parent's Phone Number:</label>
+      <input type="tel" id="parentPhoneNumber" name="parentPhoneNumber" required>
+
+      <!-- Academic Information -->
+      <label for="tenthGrade">10th Final Grade (out of 100%):</label>
+      <input type="number" id="tenthGrade" name="tenthGrade" min="0" max="100" required>
+
+      <label for="intermediateGrade">Intermediate Final Grade (out of 1000):</label>
+      <input type="number" id="intermediateGrade" name="intermediateGrade" min="0" required>
+
+      <!-- Additional Note -->
+      <p>** ORIGINAL GRADE SHEETS SHOULD BE ALSO PROVIDED PHYSICALLY. **</p>
+
+      <!-- Submit Button -->
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>
+ 

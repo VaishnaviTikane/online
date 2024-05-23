@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-image: url('campus.jpg');
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: left;
+            padding: 20px;
+        }
+
+        h1 {
+            color: darkblue;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .course-container {
+            margin-bottom: 20px;
+        }
+
+        .availability-button {
+            background-color: white;
+            padding: 10px;
+            color: black;
+            cursor: pointer;
+            border: none;
+        }
+
+        .apply-button {
+            background-color: green;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .notify-button {
+            background-color: rgb(112, 45, 172);
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function checkAvailability(course) {
+            var isSeatFilled = Math.random() > 0.5;
+            var button = document.getElementById(course + '-button');
+
+            if (isSeatFilled) {
+                button.style.backgroundColor = 'red';
+                button.innerHTML = 'NO SEATS AVAILABLE';
+            } else {
+                button.style.backgroundColor = 'green';
+                button.innerHTML = 'SEATS AVAILABLE';
+            }
+        }
+
+        function applyNow(course) {
+            window.location.href = 'admform.html?course=' + course;
+        }
+
+        function notifyMe(course) {
+            window.location.href = 'onlineadm.html';
+        }
+    </script>
+</head>
+
+<body>
+    <h1>COURSE AVAILABILITY</h1>
+
+    <div class="course-container">
+        <h2>CSE</h2>
+        <button id="CSE-button" class="availability-button" onclick="checkAvailability('CSE')">CHECK FOR AVAILABILITY</button>
+        <button class="apply-button" onclick="applyNow('CSE')">APPLY NOW</button>
+        <button class="notify-button" onclick="notifyMe('CSE')">NOTIFY IF AVAILABLE</button>
+    </div>
+
+    <div class="course-container">
+        <h2>CSE AI&ML</h2>
+        <button id="CSE-AI&ML-button" class="availability-button" onclick="checkAvailability('CSE-AI&ML')">CHECK FOR AVAILABILITY</button>
+        <button class="apply-button" onclick="applyNow('CSE-AI&ML')">APPLY NOW</button>
+        <button class="notify-button" onclick="notifyMe('CSE-AI&ML')">NOTIFY IF AVAILABLE</button>
+    </div>
+
+    <div class="course-container">
+        <h2>CSE DS</h2>
+        <button id="CSE-DS-button" class="availability-button" onclick="checkAvailability('CSE-DS')">CHECK FOR AVAILABILITY</button>
+        <button class="apply-button" onclick="applyNow('CSE-DS')">APPLY NOW</button>
+        <button class="notify-button" onclick="notifyMe('CSE-DS')">NOTIFY IF AVAILABLE</button>
+    </div>
+</body>
+
+</html>
+
